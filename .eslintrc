@@ -9,5 +9,19 @@
     }
   },
   "ignorePatterns": ["node_modules/**/*"],
-  "extends": ["next", "next/core-web-vitals", "prettier"]
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["!styled-components/macro"]
+      }
+    ]
+  }
 }

@@ -12,13 +12,16 @@
   "dependencies": {
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/react": "17.0.14",
     "@typescript-eslint/parser": "^4.28.2",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
@@ -33,5 +36,8 @@
   "lint-staged": {
     "**/*.{ts,tsx}": "eslint --fix",
     "**/*.{css,scss,sass,styled.ts,styled.tsx}": "stylelint"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
