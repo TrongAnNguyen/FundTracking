@@ -1,15 +1,22 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import ErrorBoundary from 'components/ErrorBoundary'
 import { StrictMode } from 'react'
+import { Provider } from 'react-redux'
+import store from 'state/store'
+import ThemeProvider, { ThemedGlobalStyle } from 'theme'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <StrictMode>
-      <ErrorBoundary>
-        <Component {...pageProps} />
-      </ErrorBoundary>
+      <Provider store={store}>
+        <ThemeProvider>
+          <ThemedGlobalStyle />
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        </ThemeProvider>
+      </Provider>
     </StrictMode>
   )
 }
-export default MyApp
+export default App
